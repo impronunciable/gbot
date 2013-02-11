@@ -1,0 +1,25 @@
+
+module.exports = {
+  client: {
+    jid: "yourmail@gmail.com",
+    password: "yourpassword"
+  },
+  status_message: "available",
+  allow_auto_subscribe: true,
+  welcome_message: "Hi, I'm a robot but I have feelings too. Please say 'list' to me so I can show you how can I help you.",
+  services: {
+    bitly : {
+      username: '',
+      token: ''
+    },
+    twitter: {
+      consumer_key: "",
+      consumer_secret: "",
+      access_token_key: "",
+      access_token_secret: ""
+    },
+    movies: {
+      token: ''
+    }
+  }
+};

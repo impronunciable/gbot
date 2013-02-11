@@ -1,0 +1,22 @@
+{
+  "name": "gbot",
+  "version": "0.0.0",
+  "description": "ERROR: No README.md file found!",
+  "main": "index.js",
+  "dependencies": {
+    "node-xmpp": "~0.3.2",
+    "superagent": "~0.12.2",
+    "tuiter": "~0.2.7",
+    "bitly": "~1.2.4",
+    "moviedb": "~0.1.0",
+    "debug": "~0.7.2"
+  },
+  "devDependencies": {},
+  "repository": "",
+  "author": "",
+  "license": "BSD",
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.1.x"
+  }
+}
