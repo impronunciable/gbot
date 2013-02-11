@@ -27,7 +27,6 @@ module.exports = {
       disabled: true
     },
     ping: {
-      name: 'ping',
       desc: '"ping" - returns pong if the bot is alive.'
     },
     search: {
