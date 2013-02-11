@@ -3,6 +3,8 @@
  * Module dependencies
  */
 
+var debug = require('debug')('gbot:services');
+
 var services = module.exports = {};
 
 services.services = [];
@@ -13,6 +15,8 @@ services.load = function(arr) {
     var service = require('./' + file);
     services.services[file] = {desc: arr[file].desc, handler: service, name: file};
   });
+
+  debug('Loaded service modules.');
 };
 
 services.selectService = function(str, fn) {
@@ -23,6 +27,7 @@ services.selectService = function(str, fn) {
   str = str.trim();
 
   if(this.services[cmd.toLowerCase()]) {
+    debug('About to start service: ' + cmd);
     this.services[cmd.toLowerCase()].handler(str, fn);
   }
 };

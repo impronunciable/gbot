@@ -45,6 +45,7 @@ Bot.prototype.acceptSubscriptionRequests = function(stanza) {
     });
     this.conn.send(subscribe_elem);
     this.send(config.welcome_message, stanza.attrs.from);
+    debug('Accepted new contact: ' + stanza.attrs.from);
   }
 };
 
@@ -63,8 +64,10 @@ Bot.prototype.send = function(msg, to) {
                      { to: to,
                        type: 'chat'}).
                     c('body').
-                    t(msg)
+                    t(msg);
   );
+
+  debug('Message: ' + msg + '\n sent to ' + to);
 };
 
 var fetchMessage = function(stanza) {
