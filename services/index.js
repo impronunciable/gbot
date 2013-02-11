@@ -11,6 +11,7 @@ services.services = [];
 
 services.load = function(arr) {
   Object.keys(arr).forEach(function(file){
+    if(arr[file].disabled === true) return;
     var service = require('./' + file);
     services.services[file] = {desc: arr[file].desc, handler: service};
   });

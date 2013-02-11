@@ -12,14 +12,16 @@ module.exports = {
       desc: '"bitly http://los-rayos.com.ar" - URL shortener.',
       // https://bitly.com/a/settings/advanced
       username: '', //o_login
-      token: '' //API key
+      token: '', //API key
+      disabled: true
     },
     hn: {
       desc: '"hn" - Hacker News home page.'
     },
     movies: {
       desc: '"movies search star wars" - Movie search.',
-      token: '' //themoviedb.org api key
+      token: '', //themoviedb.org api key
+      disabled: true
     },
     ping: {
       name: 'ping',
@@ -38,7 +40,8 @@ module.exports = {
         consumer_secret : '',
         access_token_key : '',
         access_token_secret : ''
-      }
+      },
+      disabled: true
     },
     weather: {
       desc: '"weather Buenos Aires" - Returns the actual weather for the required place.'
