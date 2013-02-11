@@ -3,17 +3,15 @@
  * Module dependencies
  */
 
-var fs = require('fs');
-
 var services = module.exports = {};
 
 services.services = [];
 
 services.load = function(arr) {
   Object.keys(arr).forEach(function(file){
-    if(arr[file].disabled === true) return;
+    if(arr[file].disabled && arr[file].disabed === true) return;
     var service = require('./' + file);
-    services.services[file] = {desc: arr[file].desc, handler: service};
+    services.services[file] = {desc: arr[file].desc, handler: service, name: file};
   });
 };
 
@@ -30,9 +28,11 @@ services.selectService = function(str, fn) {
 
   if("list" === cmd.toLowerCase()) {
     var txt = '';
-    services.services.forEach(function(el){
+    var el;
+    for(var i in services.services) {
+      el = services.services[i];
       txt += el.name + ': ' + el.desc + '\n\n';
-    });
+    }
     fn('Available commands:\n\n' + txt);
   } 
 };
