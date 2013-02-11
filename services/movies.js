@@ -11,7 +11,7 @@ module.exports = function(str, fn) {
       if(err) { 
         fn('Wrong search');
       } else if(!res.results) {
-
+        fn('No results');
       } else {
         var txt = 'Results for keyword "'+ str +'":\n\n';
         res.results.reverse();
