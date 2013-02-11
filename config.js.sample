@@ -18,6 +18,9 @@ module.exports = {
     hn: {
       desc: '"hn" - Hacker News home page.'
     },
+    list: {
+      desc: '"list" - Show available commands.'
+    },
     movies: {
       desc: '"movies search star wars" - Movie search.',
       token: '', //themoviedb.org api key
