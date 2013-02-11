@@ -1,12 +1,6 @@
-
 var request = require('superagent');
 
-exports.name = '"weather Buenos Aires" - Returns the actual weather for the required place.'
-
-exports.desc = 'weather';
-
-exports.handler = function(str, fn) {
-
+module.exports = function(str, fn) {
 request('http://openweathermap.org/data/2.0/find/name?units=metric&q=' + str, function(res){
   try{
   res.body = JSON.parse(res.text); 
@@ -23,6 +17,5 @@ request('http://openweathermap.org/data/2.0/find/name?units=metric&q=' + str, fu
     fn('There was an error. Please try again');
   }
 });
-
 };
 

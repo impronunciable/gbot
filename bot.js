@@ -78,14 +78,4 @@ var fetchMessage = function(stanza) {
   return msg;
 };
 
-services.load([
-  'bitly',
-  'hn',
-  'movies',
-  'ping',
-  'search',
-  'torrent',
-  'twitter',
-  'weather'
-]);
-
+services.load(config.services);

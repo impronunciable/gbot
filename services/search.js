@@ -1,9 +1,4 @@
-
 var request = require('superagent');
-
-exports.name = 'search';
-
-exports.desc = '"search Lio Messi" - Returns the first google result for the search.';
 
 module.exports = function(str, fn) {
   request('http://ajax.googleapis.com/ajax/services/search/web?v=1.0&q=' + str, function(err, res){

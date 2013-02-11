@@ -8,18 +8,39 @@ module.exports = {
   allow_auto_subscribe: true,
   welcome_message: "Hi, I'm a robot but I have feelings too. Please say 'list' to me so I can show you how can I help you.",
   services: {
-    bitly : {
+    bitly: {
+      desc: '"bitly http://los-rayos.com.ar" - URL shortener.',
       username: '',
       token: ''
     },
-    twitter: {
-      consumer_key: "",
-      consumer_secret: "",
-      access_token_key: "",
-      access_token_secret: ""
+    hn: {
+      desc: '"hn" - Hacker News home page.'
     },
     movies: {
+      desc: '"movies search star wars" - Movie search.',
       token: ''
+    },
+    ping: {
+      name: 'ping',
+      desc: '"ping" - returns pong if the bot is alive.'
+    },
+    search: {
+      desc: '"search Lio Messi" - Returns the first google result for the search.'
+    },
+    torrent: {
+      desc: '"torrent seinfeld s01e01" - get piratebay match result with most seeders.'
+    },
+    twitter: {
+      desc: '"twitter @pixelbeat" - See last tweets from a specific user.',
+      credentials: {
+        consumer_key : '',
+        consumer_secret : '',
+        access_token_key : '',
+        access_token_secret : ''
+      }
+    },
+    weather: {
+      desc: '"weather Buenos Aires" - Returns the actual weather for the required place.'
     }
-  }
+  ]
 };

@@ -1,12 +1,7 @@
 
 var request = require('superagent');
 
-exports.name = 'hn';
-
-exports.desc = '"hn" - Hacker News home page.';
-
-exports.handler = function(str, fn) {
-
+module.exports = function(str, fn) {
   request('http://api.ihackernews.com/page', function(res){
     if(!res.body.items || !res.body.items.length) return fn('No results');
     var txt = '';
@@ -17,5 +12,4 @@ exports.handler = function(str, fn) {
 
     fn(txt);
   });
-
 };

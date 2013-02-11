@@ -10,9 +10,9 @@ var services = module.exports = {};
 services.services = [];
 
 services.load = function(arr) {
-  arr.forEach(function(file){
+  Object.keys(arr).forEach(function(file){
     var service = require('./' + file);
-    services.services.push(service);
+    services.services[file] = {desc: arr[file].desc, handler: service});
   });
 };
 
@@ -23,12 +23,9 @@ services.selectService = function(str, fn) {
   str = str.replace(cmd, '');
   str = str.trim();
 
-  var known_cmd = this.services.some(function(el){
-    if(el.name === cmd.toLowerCase()) {
-      el.handler(str, fn);
-      return true;
-    }
-  });
+  if(this.services[cmd.toLowerCase()]) {
+    this.services[cmd.toLowerCase()].handler(str, fn);
+  }
 
   if("list" === cmd.toLowerCase()) {
     var txt = '';
@@ -37,6 +34,5 @@ services.selectService = function(str, fn) {
     });
     fn('Available commands:\n\n' + txt);
   } 
-
 };
 

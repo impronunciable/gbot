@@ -1,11 +1,6 @@
+var tuiter = require('tuiter')(require('../config').services.twitter.credentials);
 
-var tuiter = require('tuiter')(require('../config').services.twitter);
-
-exports.name = 'twitter';
-
-exports.desc = '"twitter @pixelbeat" - See last tweets from a specific user.';
-
-exports.handler = function(str, fn) {
+module.exports = function(str, fn) {
   if(/^@/.test(str)) {
     tuiter.userTimeline({screen_name: str.split(' ')[0].substring(1)}, function(err, data){
       if(!data || err || !data.length) return fn('No results');

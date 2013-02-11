@@ -1,11 +1,7 @@
 
 var mdb = require('moviedb')(require('../config').services.movies.token);
 
-exports.name = 'movies';
-
-exports.desc = '"movies search star wars" - Movie search.';
-
-exports.hanlder = function(str, fn) {
+module.exports = function(str, fn) {
   var cmd = str.split(' ')[0];
   str = str.replace(cmd, '');
   str = str.trim();
