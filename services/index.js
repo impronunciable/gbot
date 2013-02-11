@@ -25,15 +25,5 @@ services.selectService = function(str, fn) {
   if(this.services[cmd.toLowerCase()]) {
     this.services[cmd.toLowerCase()].handler(str, fn);
   }
-
-  if("list" === cmd.toLowerCase()) {
-    var txt = '';
-    var el;
-    for(var i in services.services) {
-      el = services.services[i];
-      txt += el.name + ': ' + el.desc + '\n\n';
-    }
-    fn('Available commands:\n\n' + txt);
-  } 
 };
 
