@@ -7,4 +7,4 @@
   - node index.js
 
 ## Demo
-  Add panchot.bot@gmail.com as a google talk contacts
+  Add panchot.bot@gmail.com as a google talk contact
