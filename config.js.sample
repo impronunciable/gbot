@@ -10,15 +10,16 @@ module.exports = {
   services: {
     bitly: {
       desc: '"bitly http://los-rayos.com.ar" - URL shortener.',
-      username: '',
-      token: ''
+      // https://bitly.com/a/settings/advanced
+      username: '', //o_login
+      token: '' //API key
     },
     hn: {
       desc: '"hn" - Hacker News home page.'
     },
     movies: {
       desc: '"movies search star wars" - Movie search.',
-      token: ''
+      token: '' //themoviedb.org api key
     },
     ping: {
       name: 'ping',
@@ -42,5 +43,5 @@ module.exports = {
     weather: {
       desc: '"weather Buenos Aires" - Returns the actual weather for the required place.'
     }
-  ]
+  }
 };

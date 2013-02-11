@@ -12,7 +12,7 @@ services.services = [];
 services.load = function(arr) {
   Object.keys(arr).forEach(function(file){
     var service = require('./' + file);
-    services.services[file] = {desc: arr[file].desc, handler: service});
+    services.services[file] = {desc: arr[file].desc, handler: service};
   });
 };
 
